@@ -1,2 +1,83 @@
 
 prueba_diagnostica.py
+
+def primo(n):
+  if n <= 1:
+    return False
+  for i in range(2, n):
+    if n % i == 0:
+      return False
+  return True
+
+
+def intermedios(a, b):
+  suma = 0
+  if a > b:
+    inicio = b
+    fin = a
+  else:
+    inicio = a
+    fin = b
+
+  for i in range(inicio + 1, fin):
+    suma += i
+  return suma
+
+
+def elevar(n):
+  if n % 2 == 0:
+    return n * n * n
+  else:
+    return n * n
+
+
+if __name__ == "__main__":
+  codigo = int(input("7. Ingresa tu código de estudiante para evaluarlo: "))
+
+  print("Resultados con tu código")
+  print("Signo:", pos_nega(codigo))
+  print("Par/Impar:", par_impar(codigo))
+  print("¿Es Fibonaci?:", fibonaci(codigo))
+  print("¿Es Primo?:", primo(codigo))
+  print("Elevar según paridad:", elevar(codigo))
+
+
+ 
+  cadena = input(
+      "Ingresa la cadena (ej. 1enero200010003): "
+  )
+
+  mes_letras = ""
+  numero_texto = ""
+
+
+  for caracter in cadena:
+    if caracter.isalpha():
+      mes_letras += caracter
+    elif caracter.isdigit():
+      numero_texto += caracter
+
+  if numero_texto != "":
+    numero_restante = int(numero_texto)
+  else:
+    numero_restante = 0
+
+  print("Salida - Mes:", mes_letras.lower())
+  print("Número restante para funciones:", numero_restante)
+
+ 
+  if numero_restante > 0:
+    print(" Evaluando el número restante:")
+    print("   Signo:", pos_nega(numero_restante))
+    print("   Par/Impar:", par_impar(numero_restante))
+    print("   ¿Es Primo?:", primo(numero_restante))
+
+
+ 
+ 
+  # aunque el punto 8 fue con ayuda de la ia para poder entender y recordar estos temas, el 9 y 10 no tengo revuerdo de como hacerlos y con ia no tiene sentido entones escribo como Para el punto 9 (el de separar vocales y consonantes del mes): Yo me imaginaría creando una variable que guarde las vocales, algo así como vocales = "aeiou". Luego, usando un ciclo for para revisar cada letra de la palabra del mes que sacamos antes, pondría un if sencillo: si la letra está en vocales, la imprimo diciendo que es una vocal, y si no, que imprima que es una consonante. No se me ocurre otra forma más complicada.
+
+#Para el punto 10 (el de la posición en el abecedario): Como todavía no domino funciones avanzadas, lo único que se me ocurriría es armar una cadena gigante con todo el abecedario en orden (abecedario = "abcdefghijklmnopqrstuvwxyz"). Después, buscaría la posición de cada letra usando algo básico como .index() o sumando con un ciclo para que me diga en qué número de puesto está la letra dentro de esa cadena
+  
+
+
