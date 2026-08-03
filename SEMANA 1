@@ -1,5 +1,4 @@
 
-prueba_diagnostica.py
 
 def primo(n):
   if n <= 1:
